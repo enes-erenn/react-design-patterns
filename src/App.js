@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { SplitScreen } from "./components/SplitScreen";
+import LeftHandComponent from "./components/SplitScreen/components/LeftHandComponent";
+import RightHandComponent from "./components/SplitScreen/components/RightHandComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<h1>Hi there</h1>} />
+        <Route
+          exact
+          path="/split-screen"
+          element={
+            <SplitScreen
+              leftWeight={3}
+              rightWeight={7}
+              leftBG={"lightgray"}
+              rightBG={"lightblue"}
+            >
+              <LeftHandComponent message="I am a flex component of the layout" />
+              <RightHandComponent message="I am also a flex component of the layout" />
+            </SplitScreen>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
