@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { SplitScreen } from "./components/SplitScreen";
-import LeftHandComponent from "./components/SplitScreen/components/LeftHandComponent";
-import RightHandComponent from "./components/SplitScreen/components/RightHandComponent";
+import Lists from "./components/LayoutComponents/Lists";
+import { SplitScreen } from "./components/LayoutComponents/SplitScreen";
+import LeftHandComponent from "./components/LayoutComponents/SplitScreen/components/LeftHandComponent";
+import RightHandComponent from "./components/LayoutComponents/SplitScreen/components/RightHandComponent";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             </SplitScreen>
           }
         />
+        <Route exact path="/lists" element={<Lists />} />
       </Routes>
     </Router>
   );
