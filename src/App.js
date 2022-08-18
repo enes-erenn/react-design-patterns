@@ -6,6 +6,8 @@ import { SplitScreen } from "./components/LayoutComponents/SplitScreen";
 import LeftHandComponent from "./components/LayoutComponents/SplitScreen/components/LeftHandComponent";
 import RightHandComponent from "./components/LayoutComponents/SplitScreen/components/RightHandComponent";
 import Provider from "./components/ProviderComponents";
+import ControlledOnboardingFlowApp from "./components/UncontrolledComponents/ControlledOnboardingFlowApp";
+import UncontrolledOnboardingFlowApp from "./components/UncontrolledComponents/UncontrolledOnboardingFlowApp";
 
 function App() {
   return (
@@ -30,6 +32,16 @@ function App() {
         <Route exact path="/lists" element={<Lists />} />
         <Route exact path="/modal" element={<Modal />} />
         <Route exact path="/user" element={<Provider />} />
+        <Route
+          exact
+          path="/uncontrolled-onboardingflow"
+          element={<UncontrolledOnboardingFlowApp />}
+        />
+        <Route
+          exact
+          path="/controlled-onboardingflow"
+          element={<ControlledOnboardingFlowApp />}
+        />
       </Routes>
     </Router>
   );
