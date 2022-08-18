@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import LoadingDataApp from "./components/Higher-OrderComponents/LoadingDataApp";
+import UserFormApp from "./components/Higher-OrderComponents/UserFormApp";
 import Lists from "./components/LayoutComponents/Lists";
 import Modal from "./components/LayoutComponents/Modal";
 import { SplitScreen } from "./components/LayoutComponents/SplitScreen";
@@ -42,6 +44,12 @@ function App() {
           path="/controlled-onboardingflow"
           element={<ControlledOnboardingFlowApp />}
         />
+        <Route
+          exact
+          path="/higher-order-component-with-user"
+          element={<LoadingDataApp />}
+        />
+        <Route exact path="/user-form" element={<UserFormApp />} />
       </Routes>
     </Router>
   );
