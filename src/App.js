@@ -8,6 +8,7 @@ import { SplitScreen } from "./components/LayoutComponents/SplitScreen";
 import LeftHandComponent from "./components/LayoutComponents/SplitScreen/components/LeftHandComponent";
 import RightHandComponent from "./components/LayoutComponents/SplitScreen/components/RightHandComponent";
 import Provider from "./components/ProviderComponents";
+import RecursiveComponentApp from "./components/RecursiveComponents/RecursiveComponentApp";
 import ControlledOnboardingFlowApp from "./components/UncontrolledComponents/ControlledOnboardingFlowApp";
 import UncontrolledOnboardingFlowApp from "./components/UncontrolledComponents/UncontrolledOnboardingFlowApp";
 
@@ -50,6 +51,11 @@ function App() {
           element={<LoadingDataApp />}
         />
         <Route exact path="/user-form" element={<UserFormApp />} />
+        <Route
+          exact
+          path="/recursive-component"
+          element={<RecursiveComponentApp />}
+        />
       </Routes>
     </Router>
   );
