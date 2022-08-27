@@ -1,8 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 let currentUser = {
   name: "John Doe",
@@ -58,6 +60,10 @@ const products = [
     rating: 4.2,
   },
 ];
+
+app.get("/test", (req, res) => {
+  res.status(200).json({ status: "success" });
+});
 
 app.get("/current-user", (req, res) => {
   res.json(currentUser);

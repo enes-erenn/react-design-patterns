@@ -19,6 +19,7 @@ Hi! In this repository i've covered "React Design Patterns" according as [React:
 
 - Node.js
 - Express
+- Cors
 
 ## Concepts
 
