@@ -1,6 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+const Container = styled.div`
+  width: 100%;
+  height: 93vh;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const ModalBackground = styled.div`
   position: fixed;
   z-index: 100;
@@ -23,13 +36,6 @@ const ModalBody = styled.div`
   height: 60%;
 `;
 
-const Body = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-`;
-
 const CloseButton = styled.div`
   position: absolute;
   right: 0;
@@ -50,12 +56,30 @@ const CloseButton = styled.div`
   cursor: pointer;
 `;
 
+const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid lightgray;
+  border-radius: 2rem;
+  padding: 2rem;
+  width: 12rem;
+  height: 2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 const Modal = ({ children }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <Body>
-      <button onClick={() => setShow(true)}>Show Modal</button>
+    <Container>
+      <Button onClick={() => setShow(true)}>Show Modal</Button>
       {show && (
         <ModalBackground onClick={() => setShow(false)}>
           <ModalBody onClick={(e) => e.stopPropagation()}>
@@ -64,7 +88,7 @@ const Modal = ({ children }) => {
           </ModalBody>
         </ModalBackground>
       )}
-    </Body>
+    </Container>
   );
 };
 

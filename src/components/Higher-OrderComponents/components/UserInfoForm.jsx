@@ -6,20 +6,16 @@ export const UserInfoForm = withEditableResource(
     const { name, age } = user || {};
     return user ? (
       <>
-        <label>
-          Name:
-          <input
-            value={name}
-            onChange={(e) => onChangeUser({ name: e.target.value })}
-          />
-        </label>
-        <label>
-          Age:
-          <input
-            value={age}
-            onChange={(e) => onChangeUser({ age: e.target.value })}
-          />
-        </label>
+        <label>Name:</label>
+        <input
+          value={name}
+          onChange={(e) => onChangeUser({ name: e.target.value })}
+        />
+        <label>Age:</label>
+        <input
+          value={age}
+          onChange={(e) => onChangeUser({ age: e.target.value })}
+        />
         <button onClick={onResetUser}>Reset</button>
         <button onClick={onSaveUser}>Save</button>
       </>

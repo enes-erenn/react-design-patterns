@@ -4,14 +4,18 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  height: 100%;
+  width: 100%;
+  height: 93vh;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 `;
 
 const Pane = styled.div`
   flex: ${(props) => props.weight};
   background-color: ${(props) => props.bg};
-  height: 100vh;
+  height: 93vh;
   display: flex;
   align-items: center;
   justify-content: center;

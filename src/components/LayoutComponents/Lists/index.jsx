@@ -1,10 +1,21 @@
 import React from "react";
+import styled from "styled-components";
 import NumberedList from "./components/NumberedLists";
 import LargePersonList from "./components/people/LargePersonList";
 import SmallPersonList from "./components/people/SmallPersonList";
 import LargeProductList from "./components/product/LargeProductList";
 import SmallProductList from "./components/product/SmallProductList";
 import RegularList from "./components/RegularList";
+
+const Container = styled.div`
+  width: 100%;
+  height: 93vh;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  overflow: auto;
+`;
 
 const Lists = () => {
   const people = [
@@ -50,7 +61,7 @@ const Lists = () => {
   ];
 
   return (
-    <>
+    <Container>
       <RegularList
         items={people}
         resourceName="person"
@@ -71,7 +82,7 @@ const Lists = () => {
         resourceName="product"
         itemComponent={LargeProductList}
       />
-    </>
+    </Container>
   );
 };
 
